@@ -1,0 +1,65 @@
+<%- include('../includes/head') %>
+<%- include('../includes/nav') %>
+<div class="container">
+
+
+  <h1 style="text-align: center;">Admin</h1>
+  <hrs>
+
+    <div class="container" style="width: 25rem;">
+      <h2>Register Form</h2>
+      <form method="POST" action="/registered">
+        <div class="form-group">
+          <label for="registrationEmail">Email address</label>
+          <input type="email" class="form-control" name='email' id="registrationEmail" aria-describedby="emailHelp"
+            placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="registrationUsername">Username </label>
+          <input type="text" class="form-control" name='username' id="registrationUsername"
+            aria-describedby="usernameHelp" placeholder="Enter username">
+          <small id="usernameHelp" class="form-text text-muted">We'll never share your username with anyone
+            else.</small>
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" name="password" id="Password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <hr>
+    <div id="err">
+      <div class="alert alert-warning alert-dismissible fade <%if(loginerr==''){ %>
+        hide
+        <% }else{%>show<%}%>" role="alert">
+        <strong><%=loginerr%></strong> <%= loginerrmassage%>
+        <button type="button" class="close" data-dismiss="alert"aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <div class="container" style="width: 25rem;">
+
+      <h2>Login Form</h2>
+      <form method="POST" action="/admin/home">
+        <div class="form-group">
+          <label for="registrationUsername">Username</label>
+          <input type="text" class="form-control" name='loginusername' id="loginUsername" placeholder="Enter username">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" name="loginpassword" id="loginPassword" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+</div>
+<%- include('../includes/floter') %>
+<script>
+  // document.getElementById('err').innerHTML= 
+</script>
+<%- include('../includes/end') %>
